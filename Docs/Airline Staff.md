@@ -3,7 +3,7 @@
 ##### Create Airline Staff Request
 
 ```
-POST /airline-staff/create
+POST /airline-staff
 ```
 
 ```json
@@ -13,7 +13,6 @@ POST /airline-staff/create
   "password": "123",
   "first_name": "John",
   "last_name": "Doe",
-  "birth_date": "2022-02-02",
   "airline": "United Airlines"
 }
 ```
@@ -27,8 +26,7 @@ POST /airline-staff/create
 ```json
 {
   "guid": "00-00-00",
-  "username": "johndoe123",
-  "date_created": "2022-02-02 11:00:00"
+  "username": "johndoe123"
 }
 ```
 
@@ -45,7 +43,6 @@ PUT /airline-staff/update/{guid}
   "password": "123",
   "first_name": "John",
   "last_name": "Doe",
-  "birth_date": "2022-02-02",
   "airline": "United Airlines"
 }
 ```

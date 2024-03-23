@@ -1,0 +1,23 @@
+@email = "abc@mail.com"
+
+POST http://localhost:5200/airlinestaff
+Content-Type: application/json
+
+{
+    "username": "johndoe123",
+    "email": "abc@mail.com",
+    "password": "123",
+    "firstName": "John",
+    "lastName": "Doe",
+    "airline": "United Airlines"
+}
+
+###
+
+GET http://localhost:5200/airlinestaff/abc@mail.com
+Content-Type: application/json
+
+###
+
+DELETE http://localhost:5200/airlinestaff/abc@mail.com
+Content-Type: application/javascript
