@@ -9,7 +9,7 @@ public class AirportController(IAirportService airportService, IConfiguration co
 {
     private readonly IAirportService _airportService = airportService;
 
-    [HttpPost("create")]
+    [HttpPost]
     public IActionResult CreateAirport(CreateAirportRequest request)
     {
         Airport airport = new(request.Name, request.Code, request.City, request.Country, DateTime.UtcNow);

@@ -3,7 +3,7 @@
 ##### Create Airport Request
 
 ```
-POST /airport/create
+POST /airport
 ```
 
 ```json

@@ -1,6 +1,6 @@
 @code = LGA
 
-POST http://localhost:5200/airport/create
+POST http://localhost:5200/airport
 Content-Type: application/json
 
 {

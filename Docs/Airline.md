@@ -3,7 +3,7 @@
 ##### Create Airline Request
 
 ```
-POST /airline/create
+POST /airline
 ```
 
 ```json
@@ -15,7 +15,7 @@ POST /airline/create
 ##### Create Airline Response
 
 ```
-201 Created
+200 Ok
 ```
 
 ```json
@@ -27,7 +27,7 @@ POST /airline/create
 ##### Delete Airline Request
 
 ```
-DELETE /airline/delete/{name}
+DELETE /airline/{name}
 ```
 
 ##### Delete Airline Response

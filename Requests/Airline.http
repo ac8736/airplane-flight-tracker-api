@@ -1,0 +1,13 @@
+@name = United-Airlines
+
+POST http://localhost:5200/airline
+Content-Type: application/json
+
+{
+    "name": "United Airlines"
+}
+
+###
+
+DELETE http://localhost:5200/airline/{{name}}
+Content-Type: application/json
