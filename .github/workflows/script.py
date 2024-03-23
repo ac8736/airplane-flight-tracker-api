@@ -28,7 +28,7 @@ cursor.execute(query)
 
 query = "CREATE TABLE airline_staff(username varchar(255) not null, email varchar(255) not null, acc_password varchar(255) not null, firstName varchar(255) not null, lastName varchar(255) not null, airline varchar(255) not null, dateCreated Datetime not null, lastModified Datetime not null);"
 cursor.execute(query)
-query = "INSERT INTO airline_staff VALUES(johndoe123, `abc@email.com`, 123, John, Doe, United-Airlines, STR_TO_DATE('2024-03-23 18:42:45', 'YYYY-MM-DD HH:MM:SS'), STR_TO_DATE(2024-03-23 18:42:45, 'YYYY-MM-DD HH:MM:SS'));"
+query = "INSERT INTO airline_staff VALUES('johndoe123', 'abc@email.com', '123', 'John', 'Doe', 'United-Airlines', '2024-03-23 12:34:56', '2024-03-23 12:34:56');"
 cursor.execute(query)
 
 conn.commit()
