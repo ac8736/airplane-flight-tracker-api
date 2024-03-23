@@ -1,40 +1,34 @@
 import pymysql.cursors
 
+
 def create_connection():
-    return pymysql.connect(host='localhost',
-                        user='root',
-                        password='root',
-                        charset='utf8mb4',
-                        cursorclass=pymysql.cursors.DictCursor)
+    return pymysql.connect(
+        host="localhost",
+        user="root",
+        password="root",
+        charset="utf8mb4",
+        cursorclass=pymysql.cursors.DictCursor,
+    )
+
 
 conn = create_connection()
 cursor = conn.cursor()
-query = "CREATE DATABASE movie_sys;"
+query = "CREATE DATABASE airline_ticket_reservation;"
 cursor.execute(query)
-query = "use movie_sys"
-cursor.execute(query)
-query = "CREATE TABLE movie(id CHAR(36) not null,`name` varchar(255) not null,director varchar(255) not null,release_date date not null,PRIMARY KEY (id))"
-cursor.execute(query)
-query = "CREATE TABLE `user`(id CHAR(36) not null,email varchar(255) not null,`username` varchar(255) not null,`password` varchar(255) not null,PRIMARY KEY (id, email))"
-cursor.execute(query)
-query = "CREATE TABLE movie_cast(movie_id char(36) not null,actor_name varchar(255) not null,`role` varchar(255) not null,PRIMARY KEY (movie_id, actor_name, `role`),FOREIGN KEY (movie_id) REFERENCES movie(id))"
-cursor.execute(query)
-query = "CREATE TABLE rating(movie_id CHAR(36) not null,user_id char(36) not null,rating int not null,comment varchar(255) not null,PRIMARY KEY (movie_id, user_id),FOREIGN KEY (movie_id) REFERENCES movie(id),FOREIGN KEY (user_id) REFERENCES `user`(id))"
-cursor.execute(query)
-query = "CREATE TABLE topic(movie_id CHAR(36) not null,topic varchar(255) not null,PRIMARY KEY (movie_id, topic),FOREIGN KEY (movie_id) REFERENCES movie(id))"
-cursor.execute(query)
-query = "CREATE TABLE watched(movie_id CHAR(36) not null,user_id char(36) not null,PRIMARY KEY (movie_id, user_id),FOREIGN KEY (movie_id) REFERENCES movie(id),FOREIGN KEY (user_id) REFERENCES `user`(id))"
+query = "use airline_ticket_reservation;"
 cursor.execute(query)
 
-query = "INSERT INTO `user` VALUES('682671f8-00f1-4155-8416-8b4f3ff97126', 'test@test.com', 'test', '$2a$11$bGf1S0ImGJWRMdHwnTQL9uAbd0oMxvkYqcIQD20RLDv6pzOKZznSS')"
+query = "CREATE TABLE airline(name varchar(255) not null, primary key (name));"
 cursor.execute(query)
-query = "INSERT INTO movie VALUES('9a2adc60-a772-4495-8290-d39e653a0228', 'Avatar', 'James Cameron', '2009-12-18')"
+query = "INSERT INTO airline VALUES('United-Airlines');"
 cursor.execute(query)
-query = "INSERT INTO movie_cast VALUES('9a2adc60-a772-4495-8290-d39e653a0228', 'Sam Worthington', 'Jake Sully')"
+
+query = "CREATE TABLE airport(name varchar(255) not null, code varchar(255) not null, city varchar(255) not null, country varchar(255) not null, dateCreated Datetime not null);"
 cursor.execute(query)
-query = "INSERT INTO topic VALUES('9a2adc60-a772-4495-8290-d39e653a0228', 'Sci-Fi')"
+
+query = "CREATE TABLE airline_staff(username varchar(255) not null, email varchar(255) not null, acc_password varchar(255) not null, firstName varchar(255) not null, lastName varchar(255) not null, airline varchar(255) not null, dateCreated Datetime not null, lastModified Datetime not null);"
 cursor.execute(query)
-query = "INSERT INTO watched VALUES('9a2adc60-a772-4495-8290-d39e653a0228', '682671f8-00f1-4155-8416-8b4f3ff97126')"
+query = "INSERT INTO airline_staff VALUES(johndoe123, abc@email.com, 123, John, Doe, United-Airlines, 2024-03-23 18:42:45, 2024-03-23 18:42:45);"
 cursor.execute(query)
 
 conn.commit()
