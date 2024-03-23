@@ -1,0 +1,21 @@
+@code = LGA
+
+POST http://localhost:5200/airport/create
+Content-Type: application/json
+
+{
+  "name": "LaGuardia Airport",
+  "code": "LGA",
+  "city": "NYC",
+  "country": "United States of America"
+}
+
+###
+
+GET http://localhost:5200/airport/{{code}}
+Content-Type: application/json
+
+###
+
+DELETE  http://localhost:5200/airport/{{code}}
+Content-Type: application/json
