@@ -21,7 +21,7 @@ public class AirlineServiceTest
 
     }
 
-    [Test]
+    [Test, Order(1)]
     public void CreateAirlineTest()
     {
         Airline mockAirline = new("United-Airlines");
@@ -31,12 +31,12 @@ public class AirlineServiceTest
 
         Assert.Multiple(() =>
         {
-            Assert.That(created);
-            Assert.That(!notCreated);
+            Assert.That(created, Is.EqualTo(true));
+            Assert.That(notCreated, Is.EqualTo(false));
         });
     }
 
-    [Test]
+    [Test, Order(2)]
     public void RemoveAirlineTest()
     {
         Airline mockAirline = new("United-Airlines");
