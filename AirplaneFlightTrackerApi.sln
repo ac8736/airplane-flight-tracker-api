@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirplaneFlightTrackerApi.Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirplaneFlightTrackerApi", "AirplaneFlightTrackerApi\AirplaneFlightTrackerApi.csproj", "{DF57F43E-76B2-4037-92E0-F1D017140F05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirplaneFlightTrackerApi.Tests", "AirplaneFlightTrackerApi.Tests\AirplaneFlightTrackerApi.Tests.csproj", "{6CDB9DB4-843F-4913-9C4D-FF8816E933EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{DF57F43E-76B2-4037-92E0-F1D017140F05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF57F43E-76B2-4037-92E0-F1D017140F05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF57F43E-76B2-4037-92E0-F1D017140F05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CDB9DB4-843F-4913-9C4D-FF8816E933EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CDB9DB4-843F-4913-9C4D-FF8816E933EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CDB9DB4-843F-4913-9C4D-FF8816E933EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CDB9DB4-843F-4913-9C4D-FF8816E933EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

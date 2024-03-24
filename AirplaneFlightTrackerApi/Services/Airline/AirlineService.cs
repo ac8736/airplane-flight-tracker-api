@@ -10,21 +10,33 @@ public class AirlineService(IDatabaseService databaseService) : IAirlineService
 
     public bool CreateAirline(Airline airline)
     {
-        _databaseService.Connect();
-        string query = $"SELECT * FROM airline WHERE name='{airline.Name}'";
-        MySqlDataReader data = _databaseService.GetItem(query);
-        if (data.HasRows)
+        Airline? data = GetAirline(airline.Name);
+        if (data != null)
         {
-            _databaseService.Disconnect();
             return false;
         }
-        _databaseService.Disconnect();
         _databaseService.Connect();
-
-        query = $"INSERT INTO airline VALUES('{airline.Name}');";
+        string query = $"INSERT INTO airline VALUES('{airline.Name}');";
         _databaseService.CreateItem(query);
+
         _databaseService.Disconnect();
         return true;
+    }
+
+    public Airline? GetAirline(string name)
+    {
+        _databaseService.Connect();
+        string query = $"SELECT * FROM airline WHERE name='{name}'";
+        MySqlDataReader data = _databaseService.GetItem(query);
+        while (data.Read())
+        {
+            Airline airline = new(data.GetString("name"));
+            _databaseService.Disconnect();
+            return airline;
+        }
+
+        _databaseService.Disconnect();
+        return null;
     }
 
     public void RemoveAirline(string name)

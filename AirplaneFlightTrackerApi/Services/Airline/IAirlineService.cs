@@ -6,4 +6,5 @@ public interface IAirlineService
 {
     bool CreateAirline(Airline airline);
     void RemoveAirline(string name);
+    Airline? GetAirline(string name);
 }
