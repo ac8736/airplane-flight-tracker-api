@@ -9,7 +9,7 @@ public class DatabaseService : IDatabaseService
 
     public DatabaseService()
     {
-        Connection = new("Server=127.0.0.1; database=airline_ticket_reservation; UID=root; password=password;");
+        Connection = new("Server=127.0.0.1; database=airline_ticket_reservation; UID=root; password=root;");
     }
 
     public void Connect()
