@@ -21,6 +21,17 @@ public class AirlineServiceTest
 
     }
 
+    [Test]
+    public void GetAirlineTest()
+    {
+        Airline mockAirline = new("Delta");
+
+        Airline? data = _airlineService.GetAirline(mockAirline.Name);
+
+        Assert.That(data, Is.Not.EqualTo(null));
+        Assert.That(data.Name, Is.EqualTo("Delta"));
+    }
+
     [Test, Order(1)]
     public void CreateAirlineTest()
     {

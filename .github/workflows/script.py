@@ -20,6 +20,8 @@ cursor.execute(query)
 
 query = "CREATE TABLE airline(name varchar(255) not null, primary key (name));"
 cursor.execute(query)
+query = "INSERT INTO airline VALUES('Delta');"
+cursor.execute(query)
 
 query = "CREATE TABLE airport(name varchar(255) not null, code varchar(255) not null, city varchar(255) not null, country varchar(255) not null, dateCreated Datetime not null);"
 cursor.execute(query)
